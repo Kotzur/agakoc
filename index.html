@@ -191,6 +191,35 @@
   .beyond p + p { margin-top: 18px; }
   .beyond em { font-style: italic; color: var(--accent); }
 
+  /* ---------- PHOTO STRIP ---------- */
+  .photo-strip {
+    display: flex;
+    gap: 18px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: clamp(32px, 5vw, 52px) var(--pad);
+    margin-inline: calc(var(--pad) * -1);
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .photo-strip::-webkit-scrollbar { display: none; }
+  .photo-strip img {
+    height: clamp(220px, 30vw, 320px);
+    width: auto;
+    border-radius: 12px;
+    flex-shrink: 0;
+    object-fit: cover;
+    box-shadow: 0 8px 28px -12px rgba(39,30,23,0.35);
+    transition: transform 0.35s ease;
+  }
+  .photo-strip img:hover { transform: scale(1.04) rotate(0deg) !important; }
+  .photo-strip img:nth-child(1) { transform: rotate(-2.2deg); }
+  .photo-strip img:nth-child(2) { transform: rotate(1.5deg); }
+  .photo-strip img:nth-child(3) { transform: rotate(-1deg); }
+  .photo-strip img:nth-child(4) { transform: rotate(2.4deg); }
+  .photo-strip img:nth-child(5) { transform: rotate(-1.8deg); }
+  .photo-strip img:nth-child(6) { transform: rotate(1.2deg); }
+
   /* ---------- FOOTER ---------- */
   footer { background: var(--bg-deep); color: var(--on-deep); padding-block: clamp(56px, 9vw, 88px); }
   footer .eyebrow { color: var(--accent-bright); }
@@ -367,6 +396,14 @@
         <p><span class="t-en">Right now a lot of my life happens on the dance floor. I dance with <em>Lasowiacy</em>, a Polish folk group here in Zurich, and I love it.</span><span class="t-pl">Teraz duża część mojego życia dzieje się na parkiecie. Tańczę z <em>Lasowiakami</em>, polskim zespołem folklorystycznym w Zurychu, i uwielbiam to.</span></p>
         <p><span class="t-en">Rowing shaped me too. I rowed in the first boat and was vice captain at Trinity Hall Boat Club. Proud winner of Blades in the Cambridge Bumps races thanks to which my name is forever painted on the boathouse walls, and I have a three-metre long oar in my flat.</span><span class="t-pl">Wioślarstwo też mnie ukształtowało. Wiosłowałam w pierwszej osadzie i byłam wicekapitanką w Trinity Hall Boat Club. Z dumą zdobyłam Blades w regatach Cambridge Bumps, dzięki czemu moje nazwisko na zawsze widnieje na ścianie elingu, a w mieszkaniu muszę znależć miejsce na trzymetrowe wiosło.</span></p>
         <p><span class="t-en">The rest of the time I am making pottery, or outside climbing, snowboarding, sailing, kitesurfing and practising yoga. I like picking up a new skill, sport or language just to see how it works.</span><span class="t-pl">Resztę czasu lepię w glinie albo jestem na dworze: wspinam się, jeżdżę na snowboardzie, żegluję, uprawiam kitesurfing i jogę. Lubię uczyć się nowych umiejętności, sportów i języków, żeby jak najszerzej doświadczać życie.</span></p>
+        <div class="photo-strip">
+          <img src="beyond-dance.jpg" width="600" height="800" alt="Lasowiacy Polish folk dance group in traditional costumes" />
+          <img src="beyond-climbing.jpg" width="600" height="800" alt="Agnieszka climbing a rock face, flashing a peace sign" />
+          <img src="beyond-pottery.jpg" width="600" height="800" alt="Agnieszka shaping clay on a pottery wheel" />
+          <img src="beyond-rowing.jpg" width="1066" height="800" alt="Trinity Hall rowing crew celebrating with laurel wreaths after winning Blades" />
+          <img src="beyond-snowboard.jpg" width="1422" height="800" alt="Lying in powder snow after a snowboard wipeout" />
+          <img src="beyond-sailing.jpg" width="600" height="800" alt="Agnieszka hanging off a sailboat mast in foul weather gear" />
+        </div>
       </div>
     </section>
 
