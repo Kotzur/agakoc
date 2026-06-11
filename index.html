@@ -1,0 +1,348 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Agnieszka Koc</title>
+<meta name="description" content="Agnieszka Koc. Engineer, product manager and dog lover, between Warsaw and Zurich. A bit about me and the things I do." />
+
+<meta property="og:title" content="Agnieszka Koc" />
+<meta property="og:description" content="Engineer, product manager and dog lover. A bit about me and the things I do." />
+<meta property="og:type" content="website" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+<style>
+  :root {
+    --bg: #faf6f0;
+    --bg-soft: #f3ece2;
+    --bg-deep: #2a201a;
+    --ink: #271e17;
+    --ink-soft: #6b5d52;
+    --line: #e6dccf;
+    --accent: #e2641b;
+    --accent-bright: #fb7c2c;
+    --accent-soft: #f6e7d8;
+    --on-deep: #f6efe6;
+    --on-deep-soft: #b7a596;
+    --on-deep-line: #463629;
+
+    --font-display: 'Archivo', system-ui, sans-serif;
+    --font-body: 'Newsreader', Georgia, serif;
+    --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
+
+    --maxw: 940px;
+    --pad: clamp(20px, 5vw, 48px);
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--font-body);
+    font-size: 18px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { color: var(--accent-bright); }
+  a:focus-visible { outline: 2px solid var(--accent-bright); outline-offset: 3px; border-radius: 2px; }
+
+  .wrap { max-width: var(--maxw); margin: 0 auto; padding-inline: var(--pad); }
+
+  .eyebrow {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin: 0 0 18px;
+  }
+
+  /* ---------- HERO ---------- */
+  .hero { padding-block: clamp(64px, 11vw, 116px); border-bottom: 1px solid var(--line); }
+  .hero .wrap { display: grid; grid-template-columns: 1fr 0.95fr; gap: clamp(30px, 5vw, 64px); align-items: center; max-width: 1140px; }
+  .hero-photo img { width: 100%; height: auto; border-radius: 16px; display: block; box-shadow: 0 18px 40px -22px rgba(39,30,23,0.45); }
+  .hero h1 {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: clamp(46px, 9.5vw, 96px);
+    line-height: 0.97;
+    letter-spacing: -0.02em;
+    margin: 0 0 22px;
+  }
+  .accent-bar { width: 64px; height: 6px; background: var(--accent); border-radius: 4px; margin: 0 0 28px; }
+  .hero .thesis {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: clamp(21px, 2.7vw, 30px);
+    line-height: 1.3;
+    letter-spacing: -0.01em;
+    max-width: 24ch;
+    margin: 0 0 26px;
+  }
+  .hero .intro { color: var(--ink-soft); max-width: 58ch; margin: 0 0 36px; }
+  .hero-links { display: flex; flex-wrap: wrap; gap: 14px 16px; align-items: center; }
+  .btn {
+    font-family: var(--font-mono);
+    font-size: 13px;
+    letter-spacing: 0.06em;
+    background: var(--accent);
+    color: var(--on-deep);
+    border: none;
+    border-radius: 100px;
+    padding: 12px 22px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+  }
+  .btn:hover { background: var(--accent-bright); }
+  .btn:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
+  .link-mono {
+    font-family: var(--font-mono);
+    font-size: 13px;
+    letter-spacing: 0.04em;
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 3px;
+  }
+  .link-mono:hover { border-color: var(--accent-bright); }
+
+  /* ---------- SECTIONS ---------- */
+  .section { padding-block: clamp(54px, 9vw, 92px); border-bottom: 1px solid var(--line); }
+  .section h2 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: clamp(26px, 4vw, 38px);
+    letter-spacing: -0.01em;
+    line-height: 1.1;
+    margin: 0 0 32px;
+  }
+  .lead { font-size: clamp(20px, 2.4vw, 25px); line-height: 1.5; max-width: 60ch; margin: 0; }
+  .lead + .lead { margin-top: 20px; }
+  .lead em { font-style: italic; color: var(--accent); }
+
+  /* ---------- ROLES ---------- */
+  .role { display: grid; grid-template-columns: 130px 1fr; gap: 0 28px; padding-block: 28px; border-top: 1px solid var(--line); }
+  .roles .role:last-child { border-bottom: 1px solid var(--line); }
+  .role .when { font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.06em; color: var(--ink-soft); padding-top: 5px; }
+  .role h3 { font-family: var(--font-display); font-weight: 600; font-size: 20px; margin: 0 0 8px; }
+  .role .at, a.at { color: var(--accent); }
+  a.at:hover { color: var(--accent-bright); }
+  .role p { margin: 0; color: var(--ink-soft); }
+  .role ul.teams { margin: 12px 0 0; padding: 0; list-style: none; }
+  .role ul.teams li { padding: 10px 0; border-top: 1px dotted var(--line); color: var(--ink-soft); font-size: 16px; }
+  .role ul.teams li:first-child { border-top: none; padding-top: 4px; }
+  .role ul.teams b { font-family: var(--font-display); font-weight: 600; }
+
+  /* ---------- COLUMNS ---------- */
+  .cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 40px 48px; }
+  .cols h3 { font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); margin: 0 0 14px; font-weight: 500; }
+  .cols p, .cols ul { margin: 0; }
+  .cols ul { list-style: none; padding: 0; }
+  .cols li { padding: 5px 0; border-bottom: 1px solid var(--line); }
+  .cols li:last-child { border-bottom: none; }
+
+  /* ---------- BEYOND ---------- */
+  .beyond p { font-size: clamp(19px, 2.2vw, 23px); line-height: 1.55; max-width: 60ch; margin: 0; }
+  .beyond p + p { margin-top: 18px; }
+  .beyond em { font-style: italic; color: var(--accent); }
+
+  /* ---------- FOOTER ---------- */
+  footer { background: var(--bg-deep); color: var(--on-deep); padding-block: clamp(56px, 9vw, 88px); }
+  footer .eyebrow { color: var(--accent-bright); }
+  footer h2 { font-family: var(--font-display); font-weight: 700; font-size: clamp(28px, 5vw, 46px); letter-spacing: -0.01em; margin: 0 0 28px; color: var(--on-deep); }
+  .footer-links { display: flex; flex-wrap: wrap; gap: 14px 16px; align-items: center; }
+  .footer-links .link-mono { color: var(--on-deep); border-color: var(--on-deep-line); }
+  .footer-links .link-mono:hover { color: var(--accent-bright); border-color: var(--accent-bright); }
+  .colophon { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.08em; color: var(--on-deep-soft); margin: 46px 0 0; text-transform: uppercase; }
+
+  /* ---------- REVEAL ---------- */
+  .reveal { opacity: 0; transform: translateY(16px); transition: opacity 0.7s ease, transform 0.7s ease; }
+  .reveal.in { opacity: 1; transform: none; }
+  @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition: none; } }
+
+  /* ---------- MOBILE ---------- */
+  @media (max-width: 620px) {
+    body { font-size: 17px; }
+    .hero .wrap { grid-template-columns: 1fr; gap: 28px; }
+    .hero-photo { order: -1; justify-self: center; max-width: 300px; }
+    .role { grid-template-columns: 1fr; gap: 4px; }
+    .role .when { margin-bottom: 6px; }
+  }
+</style>
+</head>
+<body>
+
+  <header class="hero">
+    <div class="wrap">
+      <div class="hero-text">
+        <p class="eyebrow">Between Warsaw, Poland and Zurich, Switzerland</p>
+        <h1>Agnieszka<br>Koc</h1>
+        <div class="accent-bar"></div>
+        <p class="thesis">Engineer, product manager, and dog lover.</p>
+        <p class="intro">What I care about most is working closely with people and watching my work take shape and mean something in someone's life. I do my best work when it lands with the people around me, not in the abstract. Bonus points if there is a dog involved.</p>
+        <nav class="hero-links" aria-label="Contact">
+          <button class="btn" id="contactBtn" type="button">Write to me</button>
+          <a class="link-mono" href="https://www.linkedin.com/in/kocagnes/" target="_blank" rel="noopener">LinkedIn</a>
+        </nav>
+      </div>
+      <div class="hero-photo">
+        <img src="agnieszka.jpg" width="760" height="1140" alt="Agnieszka Koc smiling, sitting on a sofa with three dogs" />
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="section" id="about">
+      <div class="wrap reveal">
+        <p class="eyebrow">About</p>
+        <p class="lead">I am good at giving things <em>shape</em>: taking a tangle of ideas and turning it into a clear structure, then a plan. Give me a target and I'll make sure we hit it.</p>
+        <p class="lead">I learn fast and like working right at the edge of what I know. I am at my best in a team warm enough for colleagues to become friends, and I love to bring in the energy to make that happen.</p>
+      </div>
+    </section>
+
+    <section class="section" id="work">
+      <div class="wrap">
+        <p class="eyebrow reveal">Work</p>
+        <h2 class="reveal">What I have done</h2>
+        <div class="roles">
+
+          <div class="role reveal">
+            <div class="when">2026 — Now</div>
+            <div>
+              <h3>Senior Product Manager, <a class="at" href="https://evo.ai.snyk.io/" target="_blank" rel="noopener">Snyk</a></h3>
+              <p>Product manager on Evo, Snyk's AI security platform, specifically working on agentic behavioral governance and AI red teaming. I take new product areas in our incubator enabling engineering squads deliver quickly, and coordinate across several teams to go from idea to validation and launch.</p>
+            </div>
+          </div>
+
+          <div class="role reveal">
+            <div class="when">2025</div>
+            <div>
+              <h3>Consultant, <a class="at" href="https://www.mckinsey.com/" target="_blank" rel="noopener">McKinsey &amp; Company</a></h3>
+              <p>I advised clients on AI and operations, built the analysis and the recommendations, and presented them to senior leadership. Work spanned an AI driven pricing model that delivered a 3.2pp loss ratio improvement, agentic architecture design, and a proof of concept that used agents to modernize legacy code.</p>
+            </div>
+          </div>
+
+          <div class="role reveal">
+            <div class="when">2025</div>
+            <div>
+              <h3>Dog care, <a class="at" href="https://www.barkandbone.ch/" target="_blank" rel="noopener">Bark&amp;Bone</a></h3>
+              <p>Part of the team at a Zurich dog daycare. I often ran the daycare on my own and did a lot of the hands on care, built close relationships with dog parents, and ran much of the social media. Easily the warmest line on my CV.</p>
+            </div>
+          </div>
+
+          <div class="role reveal">
+            <div class="when">2019 — 2025</div>
+            <div>
+              <h3>Engineer and Product Manager, <a class="at" href="https://www.google.com/" target="_blank" rel="noopener">Google</a></h3>
+              <p>Six years building large scale systems and then moving into product, working closely with engineers, clients and leadership.</p>
+              <ul class="teams">
+                <li><b><a href="https://codeassist.google/" target="_blank" rel="noopener">Gemini Code Assist</a></b> — part of the early engineering team building an AI powered IDE plugin, and led the enterprise policy enforcement needed to ship it to key Cloud clients.</li>
+                <li><b><a href="https://www.youtube.com/" target="_blank" rel="noopener">YouTube Data and Metadata</a></b> — as product manager I owned the vision for YouTube Metadata and presented it at senior director level; as an engineer I designed the canonical storage and ingestion that now affects every piece of content on YouTube.</li>
+                <li><b><a href="https://assistant.google.com/" target="_blank" rel="noopener">Google Assistant</a></b> — on Assistant Suggestions, I won the 2022 Google Tech Impact award for work that sped up Assistant, and shipped it to Chromecast.</li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="background">
+      <div class="wrap reveal">
+        <p class="eyebrow">Education, languages and more</p>
+        <div class="cols">
+          <div>
+            <h3>Education</h3>
+            <ul>
+              <li>BA Computer Science, University of Cambridge, Trinity Hall</li>
+              <li>Postgraduate Diploma in Project Management, Warsaw School of Economics</li>
+            </ul>
+          </div>
+          <div>
+            <h3>Languages</h3>
+            <ul>
+              <li>Polish, native</li>
+              <li>English, native</li>
+              <li>German, advanced</li>
+              <li>Italian, Korean, Japanese, basic</li>
+            </ul>
+          </div>
+          <div>
+            <h3>Certificates and licenses</h3>
+            <ul>
+              <li>Certified Hatha yoga teacher</li>
+              <li>Offshore sea skipper</li>
+              <li>Licensed dog carer, 500 hours of practice</li>
+              <li>Microsoft Project</li>
+              <li>Driving licence, category B</li>
+            </ul>
+          </div>
+          <div>
+            <h3>Organizing</h3>
+            <ul>
+              <li>Women in Engineering EMEA conference, Google: speakers and logistics</li>
+              <li>Grace Hopper Celebration 2023: digital operations</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section beyond" id="beyond">
+      <div class="wrap reveal">
+        <p class="eyebrow">Beyond work</p>
+        <p>Right now a lot of my life happens on the dance floor. I dance with <em>Lasowiacy</em>, a Polish folk group here in Zurich, and I love it.</p>
+        <p>Rowing shaped me too. I rowed in the first boat and was vice captain at Trinity Hall Boat Club. Proud winner of Blades in the Cambridge Bumps races thanks to which my name is forever painted on the boathouse walls, and I have a three-metre long oar in my flat.</p>
+        <p>The rest of the time I am making pottery, or outside climbing, snowboarding, sailing, kitesurfing and practising yoga. I like picking up a new skill, sport or language just to see how it works.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer id="contact">
+    <div class="wrap">
+      <p class="eyebrow">Get in touch</p>
+      <h2>Say hello</h2>
+      <nav class="footer-links" aria-label="Contact">
+        <button class="btn" id="contactBtn2" type="button">Write to me</button>
+        <a class="link-mono" href="https://www.linkedin.com/in/kocagnes/" target="_blank" rel="noopener">LinkedIn</a>
+      </nav>
+      <p class="colophon">Agnieszka Koc · Warsaw and Zurich</p>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var u = 'kocagnes', d = 'gmail', t = 'com';
+      function openMail() { window.location.href = 'mailto:' + u + '@' + d + '.' + t; }
+      var b1 = document.getElementById('contactBtn');
+      var b2 = document.getElementById('contactBtn2');
+      if (b1) b1.addEventListener('click', openMail);
+      if (b2) b2.addEventListener('click', openMail);
+
+      var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      var els = document.querySelectorAll('.reveal');
+      if (reduce || !('IntersectionObserver' in window)) {
+        els.forEach(function (el) { el.classList.add('in'); });
+        return;
+      }
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+        });
+      }, { threshold: 0.12 });
+      els.forEach(function (el) { io.observe(el); });
+    })();
+  </script>
+
+</body>
+</html>
