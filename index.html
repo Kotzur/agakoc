@@ -60,12 +60,13 @@
 
   .eyebrow {
     font-family: var(--font-mono);
-    font-size: 12px;
+    font-size: clamp(19px, 2.2vw, 23px);
     letter-spacing: 0.16em;
     text-transform: uppercase;
     color: var(--accent);
     margin: 0 0 18px;
   }
+  .eyebrow-sm { font-size: 12px; }
 
   /* ---------- LANGUAGE SWITCHER ---------- */
   .lang-switch {
@@ -166,7 +167,7 @@
 
   /* ---------- ROLES ---------- */
   .role { display: grid; grid-template-columns: 130px 1fr; gap: 0 28px; padding-block: 28px; border-top: 1px solid var(--line); }
-  .roles .role:last-child { border-bottom: 1px solid var(--line); }
+  .roles .role:last-child { border-bottom: none; }
   .role .when { font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.06em; color: var(--ink-soft); padding-top: 5px; }
   .role h3 { font-family: var(--font-display); font-weight: 600; font-size: 20px; margin: 0 0 8px; }
   .role .at, a.at { color: var(--accent); }
@@ -225,7 +226,7 @@
   <header class="hero">
     <div class="wrap">
       <div class="hero-text">
-        <p class="eyebrow"><span class="t-en">Between Warsaw, Poland and Zurich, Switzerland</span><span class="t-pl">Między Warszawą a Zurychem</span></p>
+        <p class="eyebrow eyebrow-sm"><span class="t-en">Between Warsaw, Poland and Zurich, Switzerland</span><span class="t-pl">Między Warszawą a Zurychem</span></p>
         <h1>Agnieszka<br>Koc</h1>
         <div class="accent-bar"></div>
         <p class="thesis"><span class="t-en">Engineer, product manager, and dog lover.</span><span class="t-pl">Inżynierka, product managerka i człek od psów</span></p>
@@ -254,8 +255,7 @@
 
     <section class="section" id="work">
       <div class="wrap">
-        <p class="eyebrow reveal"><span class="t-en">Work</span><span class="t-pl">Doświadczenie</span></p>
-        <h2 class="reveal"><span class="t-en">What I've been up to</span><span class="t-pl">Czym zajmuję się zawodowo</span></h2>
+        <p class="eyebrow reveal"><span class="t-en">What I've been up to at work</span><span class="t-pl">Czym zajmuję się zawodowo</span></p>
         <div class="roles">
 
           <div class="role reveal">
@@ -375,7 +375,6 @@
   <footer id="contact">
     <div class="wrap">
       <p class="eyebrow"><span class="t-en">Get in touch</span><span class="t-pl">Kontakt</span></p>
-      <h2><span class="t-en">Say hello</span><span class="t-pl">Przywitaj się</span></h2>
       <nav class="footer-links" aria-label="Contact">
         <button class="btn" id="contactBtn2" type="button"><span class="t-en">Write to me</span><span class="t-pl">Napisz do mnie</span></button>
         <a class="link-mono" href="https://www.linkedin.com/in/kocagnes/" target="_blank" rel="noopener">LinkedIn</a>
